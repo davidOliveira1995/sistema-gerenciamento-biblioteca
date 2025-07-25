@@ -29,7 +29,7 @@ public class Usuario {
 
     public void pegarLivroEmprestado(Livro livro) {
         livrosEmprestados.add(livro);
-        System.out.println("O livro, " + livro.getTitulo() + " foi adicionado aos empr´stimos do usuário, " + this.getNome());
+        System.out.println("O livro, " + livro.getTitulo() + " foi adicionado aos empréstimos do usuário, " + this.getNome());
     }
 
     public void devolverLivro(Livro livro) {
@@ -45,7 +45,7 @@ public class Usuario {
 
         if (livroEncontradoNaLista != null) {
             livrosEmprestados.remove(livroEncontradoNaLista);
-            System.out.println("com.david.biblioteca.model.Livro '" + livro.getTitulo() + "' devolvido com sucesso!");
+            System.out.println("O Livro '" + livro.getTitulo() + "' devolvido com sucesso!");
         }
         else {
             System.out.println("Erro: O livro '" + livro.getTitulo() + "' não foi encontrado nos empréstimos deste usuário.");
@@ -58,7 +58,7 @@ public class Usuario {
         if (!livrosEmprestados.isEmpty()) {
             System.out.println("Livros emprestados por, " + this.getNome());
             for (Livro l : livrosEmprestados) {
-                System.out.println("com.david.biblioteca.model.Livro: " + l.getTitulo());
+                System.out.println("Titulo do livro: " + l.getTitulo());
             }
         } else {
             System.out.println("No momento, " + this.getNome() + " não possui nenhum livro emprestado.");
@@ -66,5 +66,9 @@ public class Usuario {
         System.out.println(" ------------------------------------------- ");
     }
 
+    public void exibirDetalhes() {
 
+        System.out.println("Nome: " + this.nome);
+        System.out.println("ID: " + this.idUsuario);
+    }
 }
